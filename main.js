@@ -30,6 +30,11 @@ btn.addEventListener("click", () => {
 
     const btnX = document.createElement("span");
     btnX.innerText = "X";
+    btnX.style.cursor = "pointer";
+
+    btnX.addEventListener("click", () => {
+      li.style.textDecorationLine = "line-through";
+    });
 
     todoList.appendChild(li);
     li.appendChild(btnX);
@@ -57,6 +62,7 @@ btn.addEventListener("click", () => {
 
 btnRemove.addEventListener("click", () => {
   event.preventDefault();
+  confirm("Are you sure?");
   todoList.innerText = "";
 });
 
